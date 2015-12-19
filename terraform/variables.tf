@@ -24,16 +24,8 @@ variable "portal_net" {
     default = "10.200.0.0/16"
 }
 
-variable "region" {
-    default = "us-central1"
-}
-
 variable "compute_count" {
     default = 1
-}
-
-variable "zone" {
-    default = "us-central1-a"
 }
 
 variable "cluster_name" {

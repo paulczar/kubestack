@@ -74,12 +74,19 @@ resource "openstack_compute_secgroup_v2" "kubernetes_controller" {
     cidr = "0.0.0.0/0"
   }
 # uncomment this if you want to expose the API
-#  rule {
-#    ip_protocol = "tcp"
-#    from_port = "6443"
-#    to_port = "6443"
-#    cidr = "0.0.0.0/0"
-#  }
+  rule {
+    ip_protocol = "tcp"
+    from_port = "6443"
+    to_port = "6443"
+    cidr = "0.0.0.0/0"
+  }
+# uncomment this if you want to expose the UI
+  rule {
+    ip_protocol = "tcp"
+    from_port = "443"
+    to_port = "443"
+    cidr = "0.0.0.0/0"
+  }
 }
 
 resource "openstack_compute_secgroup_v2" "kubernetes_internal" {

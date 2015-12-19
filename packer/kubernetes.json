@@ -38,9 +38,8 @@
             "sudo chown root:root -R /opt/bin",
             "sudo mv /tmp/units/*.service /etc/systemd/system",
             "rm -rf /tmp/units",
-            "sudo rm kubernetes.tar.gz",
-            "sudo rm -rf kubernetes"
+            "sudo mv kubernetes /opt/kubernetes",
+            "sudo rm kubernetes.tar.gz"
         ]
-
     }]
 }
