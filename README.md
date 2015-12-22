@@ -13,7 +13,8 @@ Ready for testing. Over the next couple of weeks the repo should be generic enou
 - [Install Packer](https://packer.io/docs/installation.html)
 - [Install Terraform](https://www.terraform.io/intro/getting-started/install.html)
 
-The Packer and Terraform configs assume your authentication JSON file is stored under `/etc/kubernetes-account.json`
+The Packer and Terraform configs assume the following environment vars are set:
+`OS_USERNAME` `OS_PASSWORD` and `OS_AUTH_URL`
 
 ## Packer Images
 
@@ -27,7 +28,7 @@ adjust `packer/settings.json` to match settings in your OpenStack cloud.
 ```
 $ . ~/.stackrc
 $ cd packer
-$ packer build -var-file=settings.json kubernetes.json
+$ packer build -var-file=settings.json kubestack-openstack.json
 ```
 
 ## Terraform
