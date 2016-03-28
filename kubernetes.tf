@@ -169,6 +169,7 @@ resource "openstack_compute_instance_v2" "compute" {
             "sed -i 's/CONTROLLER_HOST/${openstack_compute_instance_v2.controller.0.network.0.fixed_ip_v4}/' /tmp/stage/*/*",
             "sed -i 's|PORTAL_NET|${var.portal_net}|' /tmp/stage/*/*",
             "sed -i 's|CLUSTER_DNS|${cidrhost(var.portal_net, 200)}|' /tmp/stage/*/*",
+            "sed -i 's|HYPERKUBE_VERSION|${var.hyperkube_version}|' /tmp/stage/*/*",
             "sudo mkdir -p /etc/kubernetes/manifests",
             "sudo mv /tmp/stage/compute/*.yaml /etc/kubernetes/manifests/",
             "sudo mv /tmp/stage/compute/*.service /etc/systemd/system/",
